@@ -80,7 +80,7 @@ npm start
 npx nodemon server.js
 ```
 
-### 3. Frontend Setup
+### 3. Frontend Setup (Recomanded Node Version 21+)
 ```bash
 cd frontend
 npm install
