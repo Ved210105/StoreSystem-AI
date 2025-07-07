@@ -1,0 +1,80 @@
+/* OrderHistory.css */
+.orderhistory-container {
+  max-width: 700px;
+  margin: 2.5rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(56,189,248,0.08), 0 2px 8px rgba(0,0,0,0.04);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.orderhistory-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+.orderhistory-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+.orderhistory-table th, .orderhistory-table td {
+  border-bottom: 1px solid #eee;
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+}
+.orderhistory-table th {
+  background: #f8f8f8;
+  color: #444;
+}
+.orderhistory-table td {
+  vertical-align: top;
+}
+.orderhistory-total {
+  text-align: right;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #222;
+}
+/* Error and success messages */
+.orderhistory-error-msg {
+  color: #d32f2f;
+  background: #fff0f0;
+  border: 1px solid #ffbdbd;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+.orderhistory-success-msg {
+  color: #388e3c;
+  background: #e8f5e9;
+  border: 1px solid #b2dfdb;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .orderhistory-container {
+    padding: 1.2rem 0.5rem;
+    max-width: 99vw;
+  }
+  .orderhistory-table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+  .orderhistory-table th, .orderhistory-table td {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.2rem;
+    white-space: nowrap;
+  }
+  .orderhistory-title {
+    font-size: 1.3rem;
+  }
+} 

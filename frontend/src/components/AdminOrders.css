@@ -1,0 +1,341 @@
+/* AdminOrders.css */
+.adminorders-container {
+  padding: 2.5rem 1rem;
+  background: #f4f7fb;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(56, 189, 248, 0.08), 0 2px 8px 0 rgba(0,0,0,0.04);
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.adminorders-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  color: #2563eb;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 8px #38bdf822;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.adminorders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.adminorders-table th, .adminorders-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+.adminorders-table th {
+  background: #e0e7ff;
+  color: #1e293b;
+  font-weight: 600;
+}
+.adminorders-table tr:nth-child(even) {
+  background: #f1f5f9;
+}
+.adminorders-table tr:hover {
+  background: #e0e7ff33;
+}
+.adminorders-status {
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 0.25em 0.5em;
+  background: #f3f4f6;
+}
+.adminorders-status.pending { color: #f59e42; }
+.adminorders-status.shipped { color: #2563eb; }
+.adminorders-status.delivered { color: #16a34a; }
+.adminorders-status.cancelled { color: #dc2626; }
+.adminorders-select {
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+}
+
+/* Notification section (reusing .anm-* classes for consistency) */
+.anm-form-card {
+  background: #fff;
+  border: 1.5px solid #e0e7ef;
+  box-shadow: 0 4px 24px 0 rgba(56, 189, 248, 0.10), 0 2px 8px 0 rgba(0,0,0,0.04);
+  border-radius: 1.5rem;
+  padding: 2.2rem 2.5rem 2.2rem 2.5rem;
+  width: 100%;
+  max-width: 820px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: stretch;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-form-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #a855f7;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  align-items: stretch;
+}
+.anm-checkbox-label {
+  margin-bottom: 0.5rem;
+  font-size: 1.08rem;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-checkbox {
+  accent-color: #38bdf8;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.anm-select, .anm-input, .anm-textarea {
+  padding: 1rem 1.2rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 0.95rem;
+  font-size: 1.08rem;
+  background: rgba(248, 250, 252, 0.95);
+  color: #222;
+  transition: border 0.22s, box-shadow 0.22s, background 0.22s;
+  width: 100%;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 2px 12px 0 rgba(56,189,248,0.04);
+  box-sizing: border-box;
+}
+.anm-select:focus, .anm-input:focus, .anm-textarea:focus {
+  border-color: #38bdf8;
+  outline: none;
+  box-shadow: 0 0 0 3px #38bdf855, 0 2px 12px 0 #38bdf822;
+  background: #e0e7ff;
+  color: #222;
+}
+.anm-input::placeholder, .anm-textarea::placeholder {
+  color: #64748b;
+  opacity: 1;
+}
+.anm-input:-webkit-autofill,
+.anm-select:-webkit-autofill,
+.anm-textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgba(248, 250, 252, 0.95) inset !important;
+  box-shadow: 0 0 0 1000px rgba(248, 250, 252, 0.95) inset !important;
+  -webkit-text-fill-color: #222 !important;
+}
+.anm-button {
+  width: 100%;
+  background: linear-gradient(100deg, #38bdf8, #a855f7);
+  color: #fff;
+  font-weight: 800;
+  padding: 1rem 0;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.18rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 0 18px 0 #38bdf822, 0 2px 8px 0 #a855f722;
+  text-shadow: 0 1px 8px #38bdf822;
+  letter-spacing: 0.01em;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-button:hover:not(:disabled) {
+  background: linear-gradient(100deg, #a855f7, #38bdf8);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 28px 0 #a855f733, 0 2px 12px 0 #38bdf822;
+}
+.anm-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.anm-error {
+  color: #ef4444;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  width: 100%;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-success {
+  color: #22c55e;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  width: 100%;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-filter-section {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  justify-content: flex-start;
+}
+.anm-list-section {
+  width: 100%;
+  margin-bottom: 2.2rem;
+}
+.anm-list-title {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.01em;
+  text-align: left;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-empty {
+  color: #888;
+  font-size: 1.1rem;
+  margin: 2.2rem 0;
+  text-align: center;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-card {
+  background: #f4f7fb;
+  border: 1.5px solid #e0e7ef;
+  border-radius: 1.1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 1.5rem 1.1rem 1.5rem;
+  box-shadow: 0 0 16px 0 #38bdf822, 0 2px 8px 0 #a855f722;
+  transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+  text-align: left;
+  outline: none;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-card:focus, .anm-card:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 0 24px 0 #38bdf855, 0 2px 12px 0 #a855f733;
+  background: #e0e7ffcc;
+}
+.anm-card.read {
+  opacity: 0.7;
+  background: #e0e7ff88;
+}
+.anm-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+.anm-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2563eb;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-card-type {
+  font-size: 0.98rem;
+  color: #a855f7;
+  font-weight: 600;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-card-message {
+  margin: 0.7rem 0 0.5rem 0;
+  color: #222;
+  font-size: 1.05rem;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-card-discount {
+  color: #22c55e;
+  font-size: 1.01rem;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-card-date {
+  color: #64748b;
+  font-size: 0.93rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-card-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.7rem;
+}
+.anm-action-btn {
+  background: #f1f5f9;
+  color: #2563eb;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.5rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 0 8px #38bdf822;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.anm-action-btn:hover, .anm-action-btn:focus {
+  background: #38bdf8;
+  color: #fff;
+  box-shadow: 0 0 12px #38bdf822;
+}
+.anm-action-delete {
+  color: #dc2626;
+  background: #fef2f2;
+}
+.anm-action-delete:hover, .anm-action-delete:focus {
+  background: #dc2626;
+  color: #fff;
+}
+
+/* Slightly enhance the order table for a more classic look */
+.adminorders-table th, .adminorders-table td {
+  font-size: 1rem;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+.adminorders-table th {
+  letter-spacing: 0.01em;
+}
+.adminorders-table tr:hover {
+  background: #c7d2fe33;
+  transition: background 0.18s;
+}
+.adminorders-table {
+  margin-top: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .anm-form-card, .adminorders-table {
+    max-width: 98vw;
+    min-width: 0;
+    padding: 1rem;
+  }
+}
+
+.anm-select {
+  background: #181f2a !important;
+  color: #f8fafc !important;
+  border: 1.5px solid #2d3748;
+}
+.anm-select option {
+  background: #181f2a;
+  color: #f8fafc;
+} 

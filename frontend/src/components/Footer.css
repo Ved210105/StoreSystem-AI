@@ -1,0 +1,15 @@
+.footer {
+  background: var(--glass-bg);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-top: 2rem;
+  width: 100%;
+  border-top: 2px solid var(--glass-border);
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  box-shadow: 0 -2px 18px 0 rgba(56, 189, 248, 0.08);
+  backdrop-filter: blur(10px) saturate(160%);
+  border-radius: 0 0 1.2rem 1.2rem;
+} 

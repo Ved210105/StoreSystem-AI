@@ -1,0 +1,176 @@
+/* Neon/Glassmorphism Variables */
+:root {
+  --bg-dark: #0f0f1b;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(56, 189, 248, 0.18);
+  --neon-blue: #38bdf8;
+  --neon-green: #22c55e;
+  --neon-purple: #c084fc;
+  --text-muted: #cbd5e1;
+  --text-bright: #f8fafc;
+}
+
+.loginform-container {
+  min-height: 100vh;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+  text-align: center;
+  background: radial-gradient(circle at 20% 20%, #1e293b 0%, #0f0f1b 60%);
+}
+
+.loginform-form {
+  background: var(--glass-bg);
+  border: 2px solid var(--glass-border);
+  box-shadow: 0 0 32px 0 rgba(56, 189, 248, 0.13), 0 2px 8px 0 rgba(0,0,0,0.08);
+  border-radius: 1.5rem;
+  padding: 2.8rem 2.2rem 2.2rem 2.2rem;
+  width: 100%;
+  max-width: 700px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  animation: fadeIn 0.7s cubic-bezier(.39,.575,.565,1) both;
+  text-align: center;
+  box-sizing: border-box;
+  backdrop-filter: blur(18px) saturate(160%);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: none; }
+}
+
+.loginform-title {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: var(--neon-blue);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 12px rgba(56,189,248,0.18);
+  font-family: 'Orbitron', 'Poppins', sans-serif;
+}
+
+.loginform-error {
+  color: #ef4444;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.loginform-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.loginform-label {
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+}
+
+.loginform-input {
+  padding: 1rem 1.2rem;
+  border: 2px solid #222;
+  border-radius: 0.95rem;
+  font-size: 1.08rem;
+  background: #18181b;
+  color: #fff;
+  transition: border 0.22s, box-shadow 0.22s, background 0.22s;
+  width: 95%;
+  font-family: inherit;
+  box-shadow: 0 2px 12px 0 rgba(56,189,248,0.04);
+}
+.loginform-input:focus {
+  border-color: var(--neon-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px #38bdf855, 0 2px 12px 0 #38bdf822;
+  background: #232336;
+  color: #fff;
+}
+.loginform-input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.loginform-button {
+  width: 100%;
+  background: linear-gradient(100deg, var(--neon-blue), var(--neon-purple));
+  color: #fff;
+  font-weight: 800;
+  padding: 1rem 0;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.18rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 0 18px 0 #38bdf822, 0 2px 8px 0 #c084fc22;
+  text-shadow: 0 1px 8px #38bdf822;
+  letter-spacing: 0.01em;
+}
+.loginform-button:hover:not(:disabled) {
+  background: linear-gradient(100deg, var(--neon-purple), var(--neon-blue));
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 28px 0 #c084fc33, 0 2px 12px 0 #38bdf822;
+}
+.loginform-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loginform-footer {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.loginform-link {
+  color: var(--neon-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s, text-decoration 0.2s;
+  font-size: 1.05rem;
+}
+.loginform-link:hover {
+  color: var(--neon-purple);
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .loginform-form {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+    min-width: 0;
+    border-radius: 1rem;
+    gap: 1.2rem;
+  }
+  .loginform-title {
+    font-size: 1.4rem;
+  }
+  .loginform-input {
+    font-size: 0.98rem;
+    padding: 0.7rem 0.7rem;
+    border-radius: 0.7rem;
+  }
+  .loginform-button {
+    font-size: 1rem;
+    padding: 0.7rem 0;
+    border-radius: 0.7rem;
+  }
+} 

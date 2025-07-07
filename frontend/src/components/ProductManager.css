@@ -1,0 +1,339 @@
+/* =========================================================
+   ProductManager – Modern Glassmorphism, Dashboard Consistency
+   ========================================================= */
+
+   :root {
+    /* reuse the same design‑system tokens we defined for Dashboard */
+    --bg-dark: #0f0f1b;
+    --glass-bg: rgba(255, 255, 255, 0.10);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --neon-blue: #38bdf8;
+    --neon-green: #22c55e;
+    --neon-red: #ef4444;
+    --neon-purple: #c084fc;
+    --text-muted: #cbd5e1;
+    --text-bright: #f8fafc;
+  }
+  
+  body {
+    background: radial-gradient(circle at top left, #1e3a8a 0%, #0f172a 100%);
+  }
+  
+  /* ---------- Container --------------------------------------------------- */
+  
+  .productmanager-container {
+    width: 95vw;
+    max-width: 1400px;
+    margin: 3.5rem auto 2.5rem auto;
+    padding: 2.5rem 2rem;
+  
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 2px solid var(--glass-border);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 28px rgba(56, 189, 248, 0.08),
+                0 0 32px rgba(0, 255, 255, 0.08);
+  
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+    animation: fadeSlideUp 0.8s ease both;
+  }
+  
+  /* ---------- Title ------------------------------------------------------- */
+  
+  .productmanager-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: var(--neon-blue);
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.25);
+  }
+  
+  /* ---------- Error Badge ------------------------------------------------- */
+  
+  .productmanager-error {
+    color: var(--neon-red);
+    background: rgba(239, 68, 68, 0.08);
+    border: 2px solid rgba(239, 68, 68, 0.22);
+    border-radius: 0.75rem;
+    padding: 0.9rem 1.25rem;
+    font-size: 1.05rem;
+    backdrop-filter: blur(4px);
+    animation: wobble 0.4s ease both;
+  }
+  
+  /* ---------- Filter Row -------------------------------------------------- */
+  
+  .productmanager-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.1rem;
+  }
+  
+  .productmanager-input,
+  .productmanager-filters select,
+  .productmanager-form select {
+    padding: 0.9rem 1.1rem;
+    border: 2px solid #2d3748;
+    border-radius: 0.8rem;
+    background: #181f2a !important;
+    color: #f8fafc !important;
+    font-size: 1.05rem;
+    transition: border 0.25s, box-shadow 0.25s;
+  }
+  
+  .productmanager-input:focus,
+  .productmanager-filters select:focus,
+  .productmanager-form select:focus {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22);
+    outline: none;
+  }
+  
+  .productmanager-input::placeholder {
+    color: #cbd5e1;
+    opacity: 1;
+  }
+  
+  .productmanager-filters select option,
+  .productmanager-form select option {
+    background: #181f2a;
+    color: #f8fafc;
+  }
+  
+  /* ---------- Form -------------------------------------------------------- */
+  
+  .productmanager-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem 1rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 2px solid var(--glass-border);
+    backdrop-filter: blur(14px);
+    border-radius: 1.25rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.06);
+  }
+  
+  .productmanager-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .productmanager-label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+  
+  /* ---------- Buttons ----------------------------------------------------- */
+  
+  .productmanager-button,
+  .productmanager-cancel {
+    grid-column: span 2;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border: none;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.35s ease;
+  }
+  
+  .productmanager-button {
+    background: linear-gradient(100deg, var(--neon-blue) 0%, var(--neon-purple) 100%);
+    color: #fff;
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.18);
+  }
+  
+  .productmanager-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 22px rgba(192, 132, 252, 0.22);
+  }
+  
+  .productmanager-cancel {
+    background: rgba(255, 255, 255, 0.10);
+    color: var(--neon-red);
+  }
+  
+  .productmanager-cancel:hover {
+    background: var(--neon-red);
+    color: #fff;
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.22);
+  }
+  
+  /* ---------- Product List (table) --------------------------------------- */
+  
+  .productmanager-table-card {
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-border);
+    border-radius: 1.25rem;
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.10);
+    padding: 1.5rem 1rem 2rem 1rem;
+    margin-top: 2rem;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: var(--text-bright);
+    font-size: 1.08rem;
+    background: transparent;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 2px 16px 0 rgba(56, 189, 248, 0.07);
+  }
+  
+  thead tr {
+    background: rgba(56, 189, 248, 0.13);
+  }
+  
+  th {
+    padding: 1.1rem 0.9rem;
+    font-size: 1.08rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: var(--neon-blue);
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.18);
+    border-bottom: 2px solid var(--glass-border);
+    background: rgba(255,255,255,0.10);
+  }
+  
+  td {
+    padding: 1rem 0.9rem;
+    font-size: 1.01rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    text-align: center;
+    background: rgba(255,255,255,0.04);
+  }
+  
+  tbody tr:nth-child(even) td {
+    background: rgba(56, 189, 248, 0.06);
+  }
+  
+  tbody tr:hover td {
+    background: rgba(56, 189, 248, 0.13);
+    transition: background 0.2s;
+  }
+  
+  /* Action buttons in table */
+  .productmanager-action-btn {
+    padding: 0.6rem 1.1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.7rem;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s, color 0.18s;
+    box-shadow: 0 2px 8px 0 rgba(56, 189, 248, 0.10);
+  }
+  .productmanager-action-btn.edit {
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    color: #fff;
+  }
+  .productmanager-action-btn.edit:hover {
+    background: var(--neon-purple);
+  }
+  .productmanager-action-btn.delete {
+    background: linear-gradient(90deg, var(--neon-red), #7f1d1d);
+    color: #fff;
+  }
+  .productmanager-action-btn.delete:hover {
+    background: #b91c1c;
+  }
+  
+  /* ---------- Animations -------------------------------------------------- */
+  
+  @keyframes fadeSlideUp {
+    0%   { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: none; }
+  }
+  
+  @keyframes wobble {
+    0%   { transform: translateX(0); }
+    25%  { transform: translateX(-8px); }
+    50%  { transform: translateX(8px); }
+    75%  { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+  }
+  
+  /* ---------- Responsive Tweaks ------------------------------------------ */
+  
+  @media (max-width: 900px) {
+    .productmanager-container { padding: 1.8rem 1rem; }
+    .productmanager-form      { grid-template-columns: 1fr; }
+    .productmanager-button,
+    .productmanager-cancel    { grid-column: span 1; }
+  }
+  
+  /* Product List as Cards/Grid */
+  .productmanager-list-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+    justify-items: center;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .productmanager-card {
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-border);
+    border-radius: 1.25rem;
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.10);
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.1rem;
+    position: relative;
+    transition: transform 0.18s, box-shadow 0.18s;
+  }
+  .productmanager-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px 0 #38bdf822;
+  }
+  .productmanager-card-imgs {
+    align-self: center;
+    margin-bottom: 0.5rem;
+  }
+  .productmanager-card-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .productmanager-card-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.05rem;
+    color: var(--text-bright);
+  }
+  .productmanager-card-label {
+    font-weight: 700;
+    color: var(--neon-blue);
+    min-width: 90px;
+    display: inline-block;
+  }
+  .productmanager-card-actions {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+  }
+  
+  /* Remove table styles if not needed for cards */
+  table, thead, tbody, tr, th, td, .productmanager-table-card {
+    all: unset;
+  }
+  
+  
